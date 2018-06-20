@@ -15,7 +15,7 @@ class CreateBalancoPatrimonialsTable extends Migration
     {
         Schema::create('balanco_patrimonials', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('ac_ano');
+            $table->integer('ac_ano');
             $table->float('ac_caixa', 8,2);
             $table->float('ac_estoque', 8,2);
             $table->float('ac_receber_cliente', 8,2);

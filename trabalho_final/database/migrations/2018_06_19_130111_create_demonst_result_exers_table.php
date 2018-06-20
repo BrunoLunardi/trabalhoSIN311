@@ -15,7 +15,7 @@ class CreateDemonstResultExersTable extends Migration
     {
         Schema::create('demonst_result_exers', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('ac_ano');
+            $table->integer('ac_ano');
             $table->float('receita_bruta', 8,2);
             $table->float('deducoes', 8,2);
             $table->float('receita_liquida', 8,2);
