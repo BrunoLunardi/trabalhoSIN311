@@ -17,3 +17,9 @@ Route::get('/', function () {
 
 //quando digitar a url balanco será chamado o arquivo BalancoController localizado em app\Http\Controllers
 Route::resource('balanco', 'BalancoController');
+
+//acessar a url fluxo de  caixa caira neste controller
+Route::resource('fluxcaixa', 'FluxoController');
+
+//acessar a url fluxo da venda caira neste controller
+Route::resource('venda', 'VendaController');
