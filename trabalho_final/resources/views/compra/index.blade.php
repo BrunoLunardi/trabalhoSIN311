@@ -2,14 +2,20 @@
 @section('title', 'Cadastrar compra')
 @section('content')
 
-		<h1>Cadastrar vendas</h1>
+		<h1>Cadastrar Compra</h1>
 			{{Form::open(['action' => 'CompraController@store'])}}
 
 			{{Form::label('material_id','Material')}}
-			{{Form::text('material_id','', ['class'=>'form-control', 'required', 'placeholder'=>'Material'])}}
+			{{!! Form::select('nome_material', $material) !!}}
+
+			
 			
 			{{Form::label('tipo_material','Tipo do material')}}
-			{{Form::text('tipo_material','', ['class'=>'form-control', 'required', 'placeholder'=>'Tipo do material'])}}
+			{{Form::select('tipo_material','', ['class'=>'form-control', 'required', 'placeholder'=>'Tipo do material'])}}
+
+
+			
+
 
 			{{Form::label('valor_por_kg','Valor Kilo')}}
 			{{Form::text('valor_por_kg','', ['class'=>'form-control', 'required', 'placeholder'=>'Valor Kilo'])}}
