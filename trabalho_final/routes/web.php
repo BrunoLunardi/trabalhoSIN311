@@ -18,6 +18,9 @@ Route::get('/', function () {
 //quando digitar a url balanco será chamado o arquivo BalancoController localizado em app\Http\Controllers
 Route::resource('balanco', 'BalancoController');
 
+Route::resource('indices', 'IndicesController');
+
+Route::get('/calcula_indices/{ano?}', 'IndicesController@pesquisa');
 
 Route::any('/create', 'BalancoController@show');
 
