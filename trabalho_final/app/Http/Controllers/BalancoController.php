@@ -41,6 +41,8 @@ class BalancoController extends Controller
         $pnc_emprestimo_financiamento = $request->input('pnc_emprestimo_financiamento'); 
         $pl_capital_social = $request->input('pl_capital_social');
 
+
+
         //ativo circulante
         $balanco->ano = $ano;
         $balanco->ac_caixa = $ac_caixa;
@@ -48,11 +50,11 @@ class BalancoController extends Controller
         $balanco->ac_receber_cliente = $ac_receber_cliente;
         //total ativo circulante
         $balanco->ac_total = $ac_caixa + $ac_estoque + $ac_receber_cliente;
-
         //ativo não circulate
         $balanco->anc_imobilizado = $anc_imobilizado;
         //total ativo não circulante
         $balanco->anc_total = $anc_imobilizado;
+
         //total ativo
         $balanco->ativo_total = $balanco->ac_total + $balanco->anc_total;
 
@@ -66,10 +68,13 @@ class BalancoController extends Controller
         $balanco->pnc_emprestimo_financiamento = $pnc_emprestimo_financiamento;
         //Passivo não circulante total
         $balanco->pnc_total = $pnc_emprestimo_financiamento;
+
         //Patrimonio liquido
         $balanco->pl_capital_social = $pl_capital_social;
+        //Patrimonio liquido total
+        $balanco->pl_total = $pl_capital_social;
 
-
+        $balanco->passivo_total = $balanco->pl_total + $balanco->pnc_total + $balanco->pc_total;
 
         if($balanco->save()){
             return redirect('balanco');
