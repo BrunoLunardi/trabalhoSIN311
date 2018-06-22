@@ -23,3 +23,6 @@ Route::resource('fluxcaixa', 'FluxoController');
 
 //acessar a url fluxo da venda caira neste controller
 Route::resource('venda', 'VendaController');
+
+//acessar a url fluxo da venda caira neste controller
+Route::resource('compra', 'CompraController');

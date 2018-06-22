@@ -6,15 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Venda;
+use App\Compra;
 
-class VendaController extends Controller
+
+class CompraController extends Controller
 {
-    //exibe todas as vendas
+
 	public function index(){
    		//$vendas = Venda::all();
    		//return view('venda.index', array('vendas' => $vendas ));
-   		return view('venda.index');
+   		return view('compra.index');
    	}
 
 
@@ -38,6 +39,6 @@ class VendaController extends Controller
         if($venda->save()){
             return redirect('venda');
         }
-    }   	
+    }   	   	
 
 }
